@@ -1,7 +1,9 @@
 package com.happy.controller;
 
+import com.happy.base.ApiResponse;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * @Author: Administrator
@@ -15,4 +17,9 @@ public class HomeController {
         return "index";
     }
 
+    @GetMapping("/get")
+    @ResponseBody
+    public ApiResponse get(){
+        return ApiResponse.ofMessage(200,"ok");
+    }
 }
